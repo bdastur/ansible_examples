@@ -1,0 +1,20 @@
+- name: Play to test the hierarchy of data in Ansible.
+  hosts: 127.0.0.1
+  connection: local
+  roles:
+    - { role: "dummy", tags: [ "dummy" ] }
+
+  tasks:
+    - name: simple ping test.
+      ping:
+  tags:
+    - localhost
+
+
+- name: Second play to test the hierarchy of data in Ansible.
+  hosts: dummy_hosts
+  connection: local
+  tasks:
+    - name: A simple ping test. 
+      ping: 
+

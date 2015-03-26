@@ -1,0 +1,11 @@
+- name: ping test
+  ping:
+
+- name: We render our template with variables.
+  template:
+    src: "{{ item.src }}"
+    dest: "{{item.dest }}"
+    mode: "{{item.mode|default('0755') }}"
+  with_items:
+    - { src: dummy.j2, dest: "/tmp/dummy.txt" }
+

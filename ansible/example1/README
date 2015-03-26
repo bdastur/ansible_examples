@@ -1,0 +1,18 @@
+Simple Ansible test:
+====================
+ansible all -m ping  -i hosts.ini -u centos --sudo --ask-pass
+
+
+Running the example_play playbook:
+=================================
+
+(Run only the first play in playbook 'localhost' tag)
+ansible-playbook example_play.yaml -t localhost
+
+(Run only the task for dummy tag)
+ansible-playbook example_play.yaml -t dummy  
+
+(Run all plays and tasks in playbook. Second play needs a hosts.ini file)
+ansible-playbook example_play.yaml -i hosts.ini
+
+
